@@ -16,8 +16,15 @@ Here is an example on how to use it:
 ```js
 //Please remeber,before go through the below code, you need a database connection object firts, otherwise it will not work, here 'con' is the object for the database connection.
 
+var mysql = require('mysql');
 var jq = require('jio-query');
-var model = jq.loadMethods(con);  // Please pass the database connection object
+
+var con = mysql.createConnection({host:'localhost',user:'root',password:'',database:'db_name'});
+con.connect(function(err){
+  if(err) throw err;
+});
+
+var model = jq.loadMethods(con);  // here 'con' is the object of the database connection
 
 var json_str = {
 	table		: 'table_name',
