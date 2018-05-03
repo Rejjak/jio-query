@@ -14,8 +14,6 @@ Now in this package we need this database connection object.
 Here is an example on how to use it:
 
 ```js
-//Please remeber,before go through the below code, you need a database connection object firts, otherwise it will not work, here 'con' is the object for the database connection.
-
 var mysql = require('mysql');
 var jq = require('jio-query');
 
